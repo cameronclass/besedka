@@ -1,6 +1,6 @@
 .configure-section {
   padding-top: 40px;
-  padding-bottom: 140px;
+  padding-bottom: 240px;
 }
 
 .configure-section .t-title {
@@ -29,6 +29,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .configure-section__dropdown.ui.selection.dropdown {
   width: auto;
@@ -40,6 +42,8 @@
   color: white;
   padding: 8px 18px;
   font-size: 14px;
+  max-height: 45px;
+  min-height: 45px;
 }
 .configure-section__dropdown.ui.selection.dropdown.active {
   border-radius: 20px 20px 0 0 !important;
@@ -67,6 +71,10 @@
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+  padding: 8px !important;
+}
+.configure-section__dropdown_color.ui.selection.dropdown .menu > .item {
+  padding: 4px !important;
 }
 .configure-section__dropdown.ui.selection.dropdown .menu > .item:hover {
   background-color: #fff;
@@ -77,9 +85,145 @@
   background-color: #fff;
   border-radius: 20px;
 }
-/* .ui.dropdown .menu .selected.item, .ui.dropdown.selected */
-.configure-section__checkbox {
-  width: 10%;
+
+.configure-section__dropdown_color.ui.dropdown .menu .selected.item,
+.configure-section__dropdown_color.ui.dropdown.selected {
+  background-color: white;
+  border-radius: 20px;
 }
-.configure-section {
+
+/* Checkbox */
+.configure-section__checkbox {
+  width: 100%;
+  max-width: 145px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.configure-section__checkbox label {
+  position: relative;
+  height: 100%;
+}
+.configure-section__checkbox label span {
+  color: white;
+  position: absolute;
+  z-index: 3;
+  font-size: 14px;
+  font-weight: bold;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.configure-section__checkbox.ui.toggle.checkbox .box:before,
+.ui.toggle.checkbox label:before {
+  width: 100%;
+  height: 45px;
+  background: #4d4d4d;
+}
+.configure-section__checkbox.ui.toggle.checkbox input {
+  width: 140px;
+  height: 45px;
+  z-index: 4;
+}
+
+.configure-section__checkbox.ui.toggle.checkbox
+  input:focus:checked
+  ~ .box:before,
+.configure-section__checkbox.ui.toggle.checkbox
+  input:focus:checked
+  ~ label:before {
+  background-color: #e4c000 !important;
+}
+
+.configure-section__checkbox.ui.toggle.checkbox input:focus ~ .box:before,
+.configure-section__checkbox.ui.toggle.checkbox input:focus ~ label:before {
+  background-color: #4d4d4d !important;
+}
+
+.configure-section__checkbox.ui.toggle.checkbox input ~ .box:after,
+.ui.toggle.checkbox input ~ label:after {
+  width: 45px;
+  height: 45px;
+  background: #e4c000;
+  box-shadow: none;
+}
+.configure-section__checkbox.ui.toggle.checkbox input:checked ~ .box:after,
+.ui.toggle.checkbox input:checked ~ label:after {
+  left: 101px;
+  background-color: white;
+}
+.configure-section__checkbox.ui.toggle.checkbox input:checked ~ .box:before,
+.ui.toggle.checkbox input:checked ~ label:before {
+  background: #e4c000 !important;
+}
+
+/* Colors */
+.configure-colors {
+  border-radius: 15px;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+}
+/* .configure-section__dropdown.ui.selection.dropdown .text */
+.configure-section__dropdown_color.ui.selection.dropdown
+  .text
+  .configure-colors {
+  padding: 7px;
+  border: 2px solid white;
+}
+.configure-section__dropdown_color.ui.selection.dropdown .text {
+  width: 90%;
+}
+.color-brown {
+  background-color: #5b2d0b;
+}
+
+.color-grey {
+  background-color: #4d4d4d;
+}
+
+.color-green {
+  background-color: #0a4500;
+}
+
+.color-white {
+  background-color: white;
+}
+
+.color-bronze {
+  background: linear-gradient(
+    250.17deg,
+    #584013 4.52%,
+    #7d571d 23.68%,
+    #c7bd85 46.98%,
+    #806231 68.73%,
+    #c1a06e 85.3%,
+    #5e4116 103.94%
+  );
+}
+
+.color-silver {
+  background: linear-gradient(
+    250.17deg,
+    #4d4d4d 4.52%,
+    #efefef 23.68%,
+    #969696 46.98%,
+    #d9d9d9 68.73%,
+    #9a9a9a 85.3%,
+    #4d4d4d 103.94%
+  );
+}
+.color-transparent {
+  background: radial-gradient(
+    55.97% 80.42% at 52.24% 48.65%,
+    rgba(228, 192, 0, 0) 0%,
+    #969696 100%
+  );
+}
+
+.letter-spacing-0 {
+  letter-spacing: -2px;
+}
+
+.d-none {
+  display: none !important;
 }

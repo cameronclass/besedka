@@ -34,38 +34,70 @@
 
             <div class="configure-section__block">
                 <img class="configure-section__img_left" src="img/renders/left.png" alt="">
-                <img src="img/renders/main.png" alt="">
+                <img class="configure-section-img" src="img/renders/main.png" alt="">
                 <img class="configure-section__img_right" src="img/renders/right.png" alt="">
             </div>
 
-            <div class="configure-section__form">
-                <select class="ui dropdown configure-section__dropdown">
-                    <option value="">Цвет каркаса</option>
-                    <option value="1">Male</option>
-                    <option value="0">Female</option>
-                </select>
-                <select class="ui dropdown configure-section__dropdown">
-                    <option value="">Тип покрытия</option>
-                    <option value="1">Стекло</option>
-                    <option value="2">ПВХ</option>
-                    <option value="3">Черепица</option>
-                </select>
-                <select class="ui dropdown configure-section__dropdown">
-                    <option value="">Цвет покрытия</option>
-                    <option value="1">Male</option>
-                    <option value="0">Female</option>
-                </select>
-                <select class="ui dropdown configure-section__dropdown">
-                    <option value="">Стены</option>
-                    <option value="1">------</option>
-                    <option value="2">Стекло</option>
-                    <option value="3">ПВХ</option>
-                </select>
-                <div class="ui toggle checkbox configure-section__checkbox">
-                    <input type="checkbox" name="public">
-                    <label></label>
+            <form method="post" name="configure-form" class="configure-section__form">
+
+
+                <div class="ui selection dropdown configure-section__dropdown">
+                    <input type="hidden" class="typeCover" name="typeCover">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Тип покрытия</div>
+                    <div class="menu">
+                        <div class="item" data-cover="steklo" data-value="steklo">Стекло</div>
+                        <div class="item" data-cover="pvx" data-value="pvx">ПВХ</div>
+                        <div class="item" data-cover="cerepisa" data-value="cerepisa">Черепица</div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="ui selection dropdown configure-section__dropdown configure-section__dropdown_color">
+                    <input type="hidden" class="colorCover" name="colorCover">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Цвет покрытия</div>
+                    <div class="menu">
+                        <div class="item d-none" data-cover="cerepisa" data-value="brown"><span class="configure-colors color-brown">&nbsp;</span></div>
+                        <div class="item d-none" data-cover="cerepisa" data-value="grey"><span class="configure-colors color-grey">&nbsp;</span></div>
+                        <div class="item d-none" data-cover="cerepisa" data-value="green"><span class="configure-colors color-green">&nbsp;</span></div>
+
+                        <div class="item d-none" data-cover="steklo" data-value="bronze"><span class="configure-colors color-bronze">&nbsp;</span></div>
+                        <div class="item d-none" data-cover="steklo" data-value="silver"><span class="configure-colors color-silver">&nbsp;</span></div>
+                        <!-- <div class="item d-none" data-cover="steklo" data-value="transparent"><span class="configure-colors color-transparent">&nbsp;</span></div> -->
+
+                        <div class="item d-none" data-cover="pvx" data-value="brown"><span class="configure-colors color-brown">&nbsp;</span></div>
+                        <div class="item d-none" data-cover="pvx" data-value="grey"><span class="configure-colors color-grey">&nbsp;</span></div>
+                        <div class="item d-none" data-cover="pvx" data-value="white"><span class="configure-colors color-white">&nbsp;</span></div>
+                        <div class="item d-none" data-cover="pvx" data-value="transparent"><span class="configure-colors color-transparent">&nbsp;</span></div>
+                    </div>
+                </div>
+
+                <div class="ui selection dropdown configure-section__dropdown configure-section__dropdown_color">
+                    <input type="hidden" class="colorCarcas" name="colorCarcas">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Цвет каркаса</div>
+                    <div class="menu">
+                        <div class="item" data-value="brown"><span class="configure-colors color-brown">&nbsp;</span></div>
+                        <div class="item" data-value="grey"><span class="configure-colors color-grey">&nbsp;</span></div>
+                    </div>
+                </div>
+
+                <div class="ui toggle checkbox configure-section__checkbox">
+                    <input type="checkbox" name="wall">
+                    <label>
+                        <span>Стены</span>
+                    </label>
+                </div>
+
+                <div class="ui toggle checkbox configure-section__checkbox">
+                    <input type="checkbox" name="light">
+                    <label>
+                        <span>Подсветка</span>
+                    </label>
+                </div>
+                <button type="button" class="hello">reset</button>
+
+            </form>
         </div>
     </section>
 
@@ -79,6 +111,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/components/checkbox.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/js/lightgallery.js"></script>
     <script src="js/slick.min.js"></script>
-    <script src="js/main.js?version=12345678912"></script>
+    <script src="js/main.js"></script>
+    <script src="js/configure.js"></script>
 </body>
 </html>
