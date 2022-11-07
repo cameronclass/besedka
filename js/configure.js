@@ -2,15 +2,12 @@ $(document).ready(() => {
   const configureImg = $(".configure-section-img");
   const configureForm = $('[name="configure-form"]');
 
-  const typeCover = $('[name="typeCover"]');
-  const colorCarcas = $('[name="colorCarcas"]');
-  const colorCover = $('[name="colorCover"]');
+  const typeCover = $('[name="typeCover"]').dropdown();
+  const colorCarcas = $('[name="colorCarcas"]').dropdown();
+  const colorCover = $('[name="colorCover"]').dropdown();
   const wall = $('[name="wall"]');
   const light = $('[name="light"]');
   const hello = $(".hello");
-  typeCover.dropdown({
-    clearable: true,
-  });
 
   function generateURL(type, carcas, color, light) {
     if ($('[name="light"]').prop("checked")) {
@@ -67,12 +64,10 @@ $(document).ready(() => {
 
   typeCover.change(function () {
     setTimeout(() => {
-      $('[name="colorCarcas"]').val("");
-      $('[name="colorCover"]').val("");
+      $(".configure-section__dropdown_color").dropdown("clear");
+      light.prop("checked", false);
+      wall.prop("checked", false);
     }, 50);
   });
-  hello.on("click", function () {
-    $('[name="colorCarcas"]').dropdown("clear");
-    $('[name="colorCover"]').dropdown("clear");
-  });
+
 });

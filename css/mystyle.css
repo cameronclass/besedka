@@ -6,9 +6,15 @@
 .configure-section .t-title {
   text-align: center;
 }
+.configure-section .t-subtitle {
+  margin-top: 20px;
+}
 
 .configure-section__block {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .configure-section__block img {
   width: auto;
@@ -29,6 +35,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -36,6 +43,7 @@
   width: auto;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 20px;
   border-radius: 20px;
   border: 1px solid #4d4d4d;
   background-color: #4d4d4d;
@@ -98,6 +106,10 @@
   max-width: 145px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 20px;
+}
+.configure-section__checkbox.ui.toggle.checkbox {
+  height: 45px;
 }
 .configure-section__checkbox label {
   position: relative;
@@ -226,4 +238,51 @@
 
 .d-none {
   display: none !important;
+}
+
+.configure-section__button {
+  margin-top: 45px;
+}
+.configure-section__button_block {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .configure-section__img_left {
+    left: -90%;
+  }
+
+  .configure-section__img_right {
+    right: -90%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .configure-section__block img {
+    height: 390px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .configure-section .t-subtitle {
+    margin-top: 20px;
+  }
+  .configure-section__img_left,
+  .configure-section__img_right {
+    display: none;
+  }
+  .configure-section__block img {
+    height: 200px;
+  }
+
+  .configure-section__dropdown.ui.selection.dropdown {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .configure-section__button {
+    margin-top: 20px;
+  }
 }
