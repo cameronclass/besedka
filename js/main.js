@@ -169,11 +169,11 @@ $(document).ready(() => {
       data: th.serialize(),
     }).done(function () {});
 
-    /* $.ajax({
+    $.ajax({
       type: "POST",
       url: "https://sspot.ru/b2b/mail.php",
       data: th.serialize(),
-    }).done(function () {}); */
+    }).done(function () {});
 
     th.trigger("reset");
 

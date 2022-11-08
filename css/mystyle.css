@@ -1,6 +1,6 @@
 .configure-section {
   padding-top: 40px;
-  padding-bottom: 240px;
+  padding-bottom: 40px;
 }
 
 .configure-section .t-title {
@@ -247,6 +247,11 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+.form-configure {
+  position: fixed;
+  top: 50px;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 1200px) {

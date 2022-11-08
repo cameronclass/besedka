@@ -10,7 +10,7 @@ $(document).ready(() => {
   const light = $(".light-input");
 
   function generateURL(type, carcas, color, light) {
-    if ($('[name="light"]').prop("checked")) {
+    if ($(".light-input").prop("checked")) {
       light = "light";
     } else {
       light = "normal";
@@ -132,6 +132,12 @@ $(document).ready(() => {
     $.ajax({
       type: "POST",
       url: "https://sspot.ru/b2b/telegram.php",
+      data: th.serialize(),
+    }).done(function () {});
+
+    $.ajax({
+      type: "POST",
+      url: "https://sspot.ru/b2b/mail.php",
       data: th.serialize(),
     }).done(function () {});
 
