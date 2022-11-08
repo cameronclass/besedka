@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/components/checkbox.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/css/lightgallery.css?ver=5.8.3" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/style.css?version=132456789" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/mystyle.css" />
 </head>
 
@@ -40,9 +40,8 @@
 
             <form method="post" name="configure-form" class="configure-section__form">
 
-
                 <div class="ui selection dropdown configure-section__dropdown">
-                    <input type="hidden" class="typeCover" name="typeCover">
+                    <input type="hidden" class="typeCover" name="Тип покрытия: ">
                     <i class="dropdown icon"></i>
                     <div class="default text">Тип покрытия</div>
                     <div class="menu">
@@ -53,7 +52,7 @@
                 </div>
 
                 <div class="ui selection dropdown configure-section__dropdown configure-section__dropdown_color">
-                    <input type="hidden" class="colorCover" name="colorCover">
+                    <input type="hidden" class="colorCover" name="Цвет покрытия: ">
                     <i class="dropdown icon"></i>
                     <div class="default text">Цвет покрытия</div>
                     <div class="menu">
@@ -63,7 +62,7 @@
 
                         <div class="item d-none" data-cover="steklo" data-value="bronze"><span class="configure-colors color-bronze">&nbsp;</span></div>
                         <div class="item d-none" data-cover="steklo" data-value="silver"><span class="configure-colors color-silver">&nbsp;</span></div>
-                        <!-- <div class="item d-none" data-cover="steklo" data-value="transparent"><span class="configure-colors color-transparent">&nbsp;</span></div> -->
+                        <div class="item d-none" data-cover="steklo" data-value="transparent"><span class="configure-colors color-transparent">&nbsp;</span></div>
 
                         <div class="item d-none" data-cover="pvx" data-value="brown"><span class="configure-colors color-brown">&nbsp;</span></div>
                         <div class="item d-none" data-cover="pvx" data-value="grey"><span class="configure-colors color-grey">&nbsp;</span></div>
@@ -73,7 +72,7 @@
                 </div>
 
                 <div class="ui selection dropdown configure-section__dropdown configure-section__dropdown_color">
-                    <input type="hidden" class="colorCarcas" name="colorCarcas">
+                    <input type="hidden" class="colorCarcas" name="Цвет каркаса: ">
                     <i class="dropdown icon"></i>
                     <div class="default text">Цвет каркаса</div>
                     <div class="menu">
@@ -83,82 +82,89 @@
                 </div>
 
                 <div class="ui toggle checkbox configure-section__checkbox">
-                    <input type="checkbox" name="wall">
+                    <input class="wall-input" type="checkbox" name="Стены: ">
                     <label>
                         <span>Стены</span>
                     </label>
                 </div>
 
                 <div class="ui toggle checkbox configure-section__checkbox">
-                    <input type="checkbox" name="light">
+                    <input class="light-input" type="checkbox" name="Подсветка: ">
                     <label>
                         <span>Подсветка</span>
                     </label>
                 </div>
 
                 <div class="configure-section__button_block">
-                    <div class="t-btn orange ttu ls modal__open configure-section__button" data-modal="form" data-title="Хочу беседку">
+                    <div class="t-btn orange ttu ls modal__open configure-section__button" data-modal="form-configure" data-title="Конфигурация">
                         <div class="button__box"><span>Расчитать стоимость</span></div>
                     </div>
                 </div>
 
+                <div class="overlay">
+                    <div class="overlay__inner">
+                        <!-- Форма-->
+                        <div class="modal modal__custom modal__form" data-modal="form-configure">
+                            <input class="form__name" type="hidden" name="Форма: " value="" />
+                            <div class="modal__close">
+                                <img class="img-svg" src="img/icons/close.svg" alt="Close" />
+                            </div>
+                            <div class="modal__title">Заявка на&nbsp;консультацию</div>
+                            <label class="t-label">
+                                <div class="label__title">Как к Вам обращаться?</div>
+                                <input class="label__input" type="text" name="Имя: " placeholder="Введите ваше имя" required="" />
+                            </label>
+                            <label class="t-label">
+                                <div class="label__title">Введите Ваш номер телефона</div>
+                                <input class="label__input" type="tel" name="Номер: " placeholder="+7 (___) ___-__-__" required="" />
+                            </label>
+                            <label class="t-label">
+                                <div class="label__title">Удобное время для связи</div>
+                                <div class="ui selection dropdown label">
+                                    <input type="hidden" name="Удобное время: " , value="с 12:00 до 15:00" />
+                                    <img class="dropdown icon img-svg" src="img/icons/dropdown-icon.svg" alt="" />
+                                    <div class="text">с 12:00 до 15:00</div>
+                                    <div class="menu">
+                                        <div class="item" data-value="с 9:00 до 12:00">с 9:00 до 12:00</div>
+                                        <div class="item" data-value="с 12:00 до 15:00">с 12:00 до 15:00</div>
+                                        <div class="item" data-value="с 15:00 до 18:00">с 15:00 до 18:00</div>
+                                        <div class="item" data-value="с 18:00 до 21:00">с 18:00 до 21:00</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="btn-center">
+                                <button class="t-btn orange ttu ls long" type="submit">
+                                    <div class="button__box"><span>Получить консультацию</span></div>
+                                </button>
+                            </div>
+                            <label class="policy__box">
+                                <input type="checkbox" checked="" />
+                                <div class="policy__checkbox"></div>
+                                <span>Согласие на обработку персональных данных</span>
+                            </label>
+                        </div>
+
+                        <!-- Спасибо за заявку + pdf-->
+                        <div class="modal modal__custom modal__thanks">
+                            <div class="modal__close">
+                                <img class="img-svg" src="img/icons/close.svg" alt="Close" />
+                            </div>
+                            <img class="catalog__img" src="img/modal/catalog.png" alt="" />
+                            <img class="modal__icon" src="img/icons/check-icon.svg" alt="" />
+                            <div class="modal__title">Благодарим за&nbsp;заявку!</div>
+                            <div class="modal__subtitle">В течении 15-ти минут наш менеджер свяжется и&nbsp;проконсультирует Вас по&nbsp;всем вопросам.</div>
+                            <div class="modal__description">P.s Мы знаем, что вы не любите брать трубки с&nbsp;неизвестных номеров, поэтому можете сохранить наш номер +7 495 846 22 76, чтобы не&nbsp;пропустить звонок!</div>
+                            <a class="t-btn orange ttu ls long" href="#">
+                                <div class="button__box"><span>Скачать каталог беседок в pdf</span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
             </form>
         </div>
     </section>
 
-
-    <div class="overlay">
-        <div class="overlay__inner">
-            <!-- Видео-->
-            <div class="modal video center modal__video" data-modal="video">
-                <div class="video-content"></div>
-                <div class="modal__close">
-                    <img class="img-svg" src="img/icons/close.svg" alt="Close" />
-                </div>
-            </div>
-            <!-- Форма-->
-            <form class="modal modal__custom modal__form" data-modal="form">
-                <input class="form__name" type="hidden" name="Форма: " value="" />
-                <div class="modal__close">
-                    <img class="img-svg" src="img/icons/close.svg" alt="Close" />
-                </div>
-                <div class="modal__title">Заявка на&nbsp;консультацию</div>
-                <label class="t-label">
-                    <div class="label__title">Как к Вам обращаться?</div>
-                    <input class="label__input" type="text" name="Имя: " placeholder="Введите ваше имя" required="" />
-                </label>
-                <label class="t-label">
-                    <div class="label__title">Введите Ваш номер телефона</div>
-                    <input class="label__input" type="tel" name="Номер: " placeholder="+7 (___) ___-__-__" required="" />
-                </label>
-                <label class="t-label">
-                    <div class="label__title">Удобное время для связи</div>
-                    <div class="ui selection dropdown label">
-                        <input type="hidden" name="Удобное время: " , value="с 12:00 до 15:00" />
-                        <img class="dropdown icon img-svg" src="img/icons/dropdown-icon.svg" alt="" />
-                        <div class="text">с 12:00 до 15:00</div>
-                        <div class="menu">
-                            <div class="item" data-value="с 9:00 до 12:00">с 9:00 до 12:00</div>
-                            <div class="item" data-value="с 12:00 до 15:00">с 12:00 до 15:00</div>
-                            <div class="item" data-value="с 15:00 до 18:00">с 15:00 до 18:00</div>
-                            <div class="item" data-value="с 18:00 до 21:00">с 18:00 до 21:00</div>
-                        </div>
-                    </div>
-                </label>
-                <div class="btn-center">
-                    <button class="t-btn orange ttu ls long" type="submit">
-                        <div class="button__box"><span>Получить консультацию</span></div>
-                    </button>
-                </div>
-                <label class="policy__box">
-                    <input type="checkbox" checked="" />
-                    <div class="policy__checkbox"></div>
-                    <span>Согласие на обработку персональных данных</span>
-                </label>
-            </form>
-        </div>
-    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

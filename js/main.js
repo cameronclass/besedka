@@ -160,19 +160,20 @@ $(document).ready(() => {
   // }
 
   // E-mail Ajax Send
-  $("form").submit(function (event) {
+  $(".forms").submit(function (event) {
     var th = $(this);
+
     $.ajax({
       type: "POST",
       url: "https://sspot.ru/b2b/telegram.php",
       data: th.serialize(),
     }).done(function () {});
 
-    $.ajax({
+    /* $.ajax({
       type: "POST",
       url: "https://sspot.ru/b2b/mail.php",
       data: th.serialize(),
-    }).done(function () {});
+    }).done(function () {}); */
 
     th.trigger("reset");
 
@@ -184,6 +185,7 @@ $(document).ready(() => {
     $(".overlay").fadeIn();
     $(".modal").hide();
     $(".modal__thanks").show();
+
     return false;
   });
 
